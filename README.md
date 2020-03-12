@@ -40,7 +40,7 @@ In the project root: `vendor/bin/sake dev/build`
 ### 6. If you haven't already, create a virtual host or use some development environment like \*AMP.
 
 This assumes you are:
-- Using .htacces
+- Using .htaccess
 - Capable of setting up a virtual host. Change these setting to your needs:
 
 [apache.conf]

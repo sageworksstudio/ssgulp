@@ -4,4 +4,4 @@
     </div>
 </footer>
 
-<script src="_resources/themes/frisky/dist/js/app.js" async defer></script>
+<script src="_resources/themes/ssgulp/dist/js/app.js" async defer></script>

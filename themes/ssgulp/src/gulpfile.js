@@ -27,7 +27,7 @@ const paths = {
             watch   : '../../../app/src/**/*.php'
         },
         url: {
-            dev     : 'http://thefriskybiscuit/'
+            dev     : 'http://ssgulp/'
         }
     };
 
