@@ -1,1 +1,74 @@
-!function(){"use strict";let t=document.getElementById("main-nav"),n=(t.classList,document.getElementById("nav-toggle")),e=document.getElementById("close-nav");new Date;function i(){t.classList.toggle("show-nav")}const o={common:{init:function(){n.addEventListener("click",i),e.addEventListener("click",i)}},Home:{init:function(){}},Contact:{init:function(){}},About:{init:function(){}}},c={exec:function(t,n){let e=o;n=void 0===n?"init":n,""!==t&&e[t]&&"function"==typeof e[t][n]&&e[t][n]()},init:function(){let t=document.getElementById("main"),n=t.getAttribute("data-controller"),e=t.getAttribute("data-action");c.exec("common"),c.exec(n),c.exec(n,e)}};window.onload=c.init}();
+// Custom functions
+(function() {
+    "use strict";
+
+    let mainNav     = document.getElementById('main-nav');
+    let mainNavLst  = mainNav.classList;
+    let mobNav      = document.getElementById('nav-toggle');
+    let closeNav    = document.getElementById('close-nav');
+    let date = new Date();
+
+    function navToggle() {
+        mainNav.classList.toggle('show-nav');
+    }
+
+
+    // Page specific actions
+    const MYSITE = {
+        common: { // sitewide code
+            init: function() {
+                mobNav.addEventListener('click', navToggle);
+                closeNav.addEventListener('click', navToggle);
+                // this.theYear = date.getFullYear();
+            }
+        },
+
+        Home: {
+            init: function() {// home page
+
+                // Do Page specific stuff here
+
+            }
+        },
+
+        Contact: {
+            init: function() {// home page
+
+                // Do Page specific stuff here
+
+            }
+        },
+
+        About: {
+            init: function() {// home page
+
+                // Do Page specific stuff here
+
+            }
+        }
+
+
+    };
+
+
+    const UTIL = {
+        exec: function(controller, action) {
+            let namespace = MYSITE;
+            action = (action === undefined) ? 'init' : action;
+            if (controller !== '' && namespace[controller] && typeof namespace[controller][action] == 'function' ) {
+                namespace[controller][action]();
+            }
+        },
+        init: function() {
+            let elm = document.getElementById('main');
+            let controller = elm.getAttribute( 'data-controller' );
+            let action = elm.getAttribute( 'data-action' );
+            UTIL.exec( 'common' );
+            UTIL.exec( controller );
+            UTIL.exec( controller, action );
+        }
+    };
+
+    window.onload = UTIL.init;
+
+})();

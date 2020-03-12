@@ -1,12 +1,22 @@
-# SilverStripe Theme
+# SSGulp is a SilverStripe framework and CMS with a custom theme designed for rapid development.
 
-## Full instructions
+This is a standard SilverStripe installation with the exception of the custom theme. The theme takes advantage of modern build tools like Gulp, NPM and Node.
+
+## Requirements
+- PHP >= 7.1
+- Node
+- NPM or Yarn (Instructions below are for NPM)
+- ES6 JavaScript (Because we're big boys or girls now)
+
+## SilverStripe Setup
 
 ### 1. Clone this repo
 
 `git clone git@github.com:sageworksstudio/ssgulp.git`
 
-### Edit .env
+### 2. Create a database
+
+### 3. Edit .env
 
 ```
 SS_DATABASE_CLASS="MySQLDatabase"
@@ -19,15 +29,15 @@ SS_DEFAULT_ADMIN_PASSWORD="password"
 SS_ENVIRONMENT_TYPE="<dev|test|live>"
 ```
 
-### Run composer
+### 4. Run composer
 
 `composer update`
 
-### Build the db
+### 5. Build the db
 
 In the project root: `vendor/bin/sake dev/build`
 
-### Create a virtual host
+### 6. If you haven't already, create a virtual host or use some development environment like \*AMP.
 
 This assumes you are:
 - Using .htacces
@@ -46,12 +56,13 @@ This assumes you are:
 </VirtualHost>
 
 ```
-### Add SSGulpTheme
 
-`composer install sageworksstudio/ssgulptheme`
+## Development Setup
 
-- For the latest development:
-    `git clone git@github.com:sageworksstudio/friskybiscuit2.git --branch dev`
-- Production:
-    `git@github.com:sageworksstudio/friskybiscuit2.git`
+From within `themes/ssgulp/src` run `npm i && gulp`.
 
+This will install all the node_modules required for development and open a browser for you.
+
+Only edit files in the `themes/ssgulp/src` directory. Files will be saved to `themes/ssgulp/dist/`.
+
+By default CSS and JavaScript are saved uncompressed for development. When you want to save files compressed for production, from the `themes/ssgulp/src` directory run the command `gulp production` and Gulp will export compressed CSS and JavaScript to the dist folder.

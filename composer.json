@@ -25,10 +25,10 @@
             "web.config"
         ],
         "expose": [
-            "themes/frisky/dist/css",
-            "themes/frisky/dist/img",
-            "themes/frisky/dist/js",
-            "themes/frisky/dist/fonts"
+            "themes/ssgulp/dist/css",
+            "themes/ssgulp/dist/img",
+            "themes/ssgulp/dist/js",
+            "themes/ssgulp/dist/fonts"
         ]
     },
     "config": {
