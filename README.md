@@ -14,9 +14,31 @@ This is a standard SilverStripe installation with the exception of the custom th
 
 `git clone git@github.com:sageworksstudio/ssgulp.git`
 
-### 2. Create a database
+### 2. Rename your `/themes/ssgulp` directory to something else (optional)
 
-### 3. Edit .env
+### 3. If you did optionally rename your theme folder then edit `/app/_config/theme.yml`
+
+And change this:
+
+```
+  themes:
+    - '$public'
+    - 'ssgulp'
+    - '$default'
+```
+
+to this:
+
+```
+  themes:
+    - '$public'
+    - 'your-theme-name-here'
+    - '$default'
+```
+
+### 4. Create a database
+
+### 5. Edit .env
 
 ```
 SS_DATABASE_CLASS="MySQLDatabase"
@@ -29,15 +51,15 @@ SS_DEFAULT_ADMIN_PASSWORD="password"
 SS_ENVIRONMENT_TYPE="<dev|test|live>"
 ```
 
-### 4. Run composer
+### 6. Run composer
 
 `composer update`
 
-### 5. Build the db
+### 7. Build the db
 
 In the project root: `vendor/bin/sake dev/build`
 
-### 6. If you haven't already, create a virtual host or use some development environment like \*AMP.
+### 8. If you haven't already, create a virtual host or use some development environment like \*AMP.
 
 This assumes you are:
 - Using .htaccess
@@ -59,7 +81,9 @@ This assumes you are:
 
 ## Development Setup
 
-From within `themes/ssgulp/src` run `npm i && gulp`.
+### 1. If you changed the theme folder to a new name, then from within `themes/your-theme-name/src` edit the `gulpfile.js`. In the `const paths` change the dev url to your virtual host url.
+
+### 2. From within `themes/ssgulp/src` run `npm i && gulp`.
 
 This will install all the node_modules required for development and open a browser for you.
 
