@@ -81,7 +81,9 @@ This assumes you are:
 
 ## Development Setup
 
-### 1. If you changed the theme folder to a new name, then from within `themes/your-theme-name/src` edit the `gulpfile.js`. In the `const paths` change the dev url to your virtual host url.
+### 1. Change your dev URL
+
+If you changed the theme folder to a new name, then from within `themes/your-theme-name/src` edit the `gulpfile.js`. In the `const paths` change the dev url to your virtual host url.
 
 ### 2. From within `themes/ssgulp/src` run `npm i && gulp`.
 
