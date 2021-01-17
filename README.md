@@ -16,7 +16,9 @@ This is a standard SilverStripe installation with the exception of the custom th
 
 ### 2. Rename your `/themes/ssgulp` directory to something else (optional)
 
-### 3. If you did optionally rename your theme folder then edit `/app/_config/theme.yml`
+### 3. If you did optionally rename your theme folder:
+
+edit `/app/_config/theme.yml`
 
 And change this:
 
@@ -34,6 +36,40 @@ to this:
     - '$public'
     - 'your-theme-name-here'
     - '$default'
+```
+
+edit `/themes/<your-theme>/templates/Page.ss` and `/themes/<your-theme>/templates/Includes/Footer.ss`
+
+and change your paths from:
+
+`_resources/themes/ssgulp/...`
+
+to:
+
+`_resources/themes/<your-theme>/...`
+
+and finally, edit /composer.json and change:
+
+```
+"expose": [
+    "themes/ssgulp/dist/css",
+    "themes/ssgulp/dist/img",
+    "themes/ssgulp/dist/js",
+    "themes/ssgulp/dist/fonts"
+]
+```
+
+to:
+
+
+
+```
+"expose": [
+    "themes/<your-theme>/dist/css",
+    "themes/<your-theme>/dist/img",
+    "themes/<your-theme>/dist/js",
+    "themes/<your-theme>/dist/fonts"
+]
 ```
 
 ### 4. Create a database
