@@ -49,7 +49,7 @@ const log         = require('fancy-log')
 const normal      = require('node-normalize-scss')
 const plumber     = require('gulp-plumber')
 const prefix      = require('gulp-autoprefixer')
-const sass        = require('gulp-sass')
+const sass        = require('gulp-sass')(require('sass'))
 const sourcemaps  = require('gulp-sourcemaps')
 const uglify      = require('gulp-terser')
 
